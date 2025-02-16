@@ -14,9 +14,8 @@ def test_submit_practice_form():
     browser.element('.react-datepicker__day--001').click()
     browser.element('#subjectsInput').send_keys('Biology').press_enter()
 
-    # browser.all('[for="hobbies-checkbox-3"]').click()
+    browser.all('.custom-control-label').element_by(have.text('Sports')).click()
     browser.element('#currentAddress').type('Komsomolskaya street 90,kv 13')
-
     browser.element('#state').click().element('div[id^="react-select-3-option"]').click()
     browser.element('#city').click().element('div[id^="react-select-4-option"]').click()
 
@@ -27,7 +26,7 @@ def test_submit_practice_form():
     browser.element('.table').should(have.text('ulapetrova@mail.ru'))
     browser.element('.table').should(have.text('Female'))
     browser.element('.table').should(have.text('89252223344'))
-    browser.element('.table').should(have.text('1 September,1987'))
+    browser.element('.table').should(have.text('1 October,1987'))
     browser.element('.table').should(have.text('Biology'))
 
     browser.element('.table').should(have.text('Komsomolskaya street 90,kv 13'))
