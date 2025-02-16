@@ -12,6 +12,8 @@ def test_submit_practice_form():
     browser.element('.react-datepicker__month-select').click().element('option[value="9"]').click()
     browser.element('.react-datepicker__year-select').click().element('option[value="1987"]').click()
     browser.element('.react-datepicker__day--001').click()
+    browser.element('#subjectsInput').send_keys('Biology').press_enter()
+
     # browser.all('[for="hobbies-checkbox-3"]').click()
     browser.element('#currentAddress').type('Komsomolskaya street 90,kv 13')
 
@@ -19,3 +21,14 @@ def test_submit_practice_form():
     browser.element('#city').click().element('div[id^="react-select-4-option"]').click()
 
     browser.element('#submit').press_enter()
+
+    browser.element('.modal-content').should(be.visible)
+    browser.element('.table').should(have.text('Julia Petrova'))
+    browser.element('.table').should(have.text('ulapetrova@mail.ru'))
+    browser.element('.table').should(have.text('Female'))
+    browser.element('.table').should(have.text('89252223344'))
+    browser.element('.table').should(have.text('1 September,1987'))
+    browser.element('.table').should(have.text('Biology'))
+
+    browser.element('.table').should(have.text('Komsomolskaya street 90,kv 13'))
+    browser.element('.table').should(have.text('NCR Delhi'))
