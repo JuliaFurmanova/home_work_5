@@ -6,3 +6,5 @@ from selene import browser
 def open_browser():
     browser.open('https://demoqa.com/automation-practice-form')
 
+    yield
+    browser.quit()
