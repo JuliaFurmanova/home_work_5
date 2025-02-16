@@ -6,7 +6,7 @@ def test_submit_practice_form():
     browser.element('[placeholder="Last Name"]').send_keys('Petrova')
     browser.element('#userEmail').send_keys('ulapetrova@mail.ru')
     browser.element('[for="gender-radio-2"]').click()
-    browser.element('[placeholder="Mobile Number"]').send_keys('89252223344')
+    browser.element('[placeholder="Mobile Number"]').send_keys('8925222334')
 
     browser.element('#dateOfBirthInput').click()
     browser.element('.react-datepicker__month-select').click().element('option[value="9"]').click()
