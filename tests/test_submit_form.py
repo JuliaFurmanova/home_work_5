@@ -25,7 +25,7 @@ def test_submit_practice_form():
     browser.element('.table').should(have.text('Julia Petrova'))
     browser.element('.table').should(have.text('ulapetrova@mail.ru'))
     browser.element('.table').should(have.text('Female'))
-    browser.element('.table').should(have.text('89252223344'))
+    browser.element('.table').should(have.text('8925222334'))
     browser.element('.table').should(have.text('1 October,1987'))
     browser.element('.table').should(have.text('Biology'))
 
