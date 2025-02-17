@@ -1,4 +1,4 @@
-from selene import browser , have, be
+from selene import browser, have, be
 
 
 def test_submit_practice_form():
@@ -28,6 +28,5 @@ def test_submit_practice_form():
     browser.element('.table').should(have.text('8925222334'))
     browser.element('.table').should(have.text('1 October,1987'))
     browser.element('.table').should(have.text('Biology'))
-
     browser.element('.table').should(have.text('Komsomolskaya street 90,kv 13'))
     browser.element('.table').should(have.text('NCR Delhi'))
