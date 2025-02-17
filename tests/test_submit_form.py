@@ -13,7 +13,6 @@ def test_submit_practice_form():
     browser.element('.react-datepicker__year-select').click().element('option[value="1987"]').click()
     browser.element('.react-datepicker__day--001').click()
     browser.element('#subjectsInput').send_keys('Biology').press_enter()
-
     browser.all('.custom-control-label').element_by(have.text('Sports')).click()
     browser.element('#currentAddress').type('Komsomolskaya street 90,kv 13')
     browser.element('#state').click().element('div[id^="react-select-3-option"]').click()
@@ -21,6 +20,7 @@ def test_submit_practice_form():
 
     browser.element('#submit').press_enter()
 
+    # проверяем ожидаемый результат
     browser.element('.modal-content').should(be.visible)
     browser.element('.table').should(have.text('Julia Petrova'))
     browser.element('.table').should(have.text('ulapetrova@mail.ru'))
